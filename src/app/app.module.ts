@@ -6,10 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CheckboxModule} from 'primeng/checkbox';
 import { SessionTimerComponent } from './session-timer/session-timer.component';
-import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './component/login/login.component';
+import { FooterComponent } from './component/footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from 'src/service/auth/auth.service';
+import { AuthService } from 'src/app/service/auth/auth.service';
 
 @NgModule({
   declarations: [

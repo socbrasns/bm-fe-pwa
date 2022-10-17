@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { AuthService } from 'src/service/auth/auth.service';
+import { AuthService } from 'src/app/service/auth/auth.service';
 import { User } from './model/user';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AuthService } from 'src/service/auth/auth.service';
-import { User } from '../model/user';
+import { AuthService } from 'src/app/service/auth/auth.service';
+import { User } from '../../model/user';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +28,7 @@ import { User } from '../model/user';
             <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
         </div>
 
-        <button (onClick)="login" pButton pRipple label="Sign In" icon="pi pi-user" class="w-full"></button>
+        <button pButton pRipple label="Sign In" icon="pi pi-user" class="w-full" (click)="login()"></button>
     </div>
 </div>
   `,
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-this.authService.login(this.user)
+    this.authService.login(this.user)
   }
 
 }
