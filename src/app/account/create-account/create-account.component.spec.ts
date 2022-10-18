@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SessionTimerComponent } from './session-timer.component';
+import { CreateAccountComponent } from './create-account.component';
 
-describe('SessionTimerComponent', () => {
-  let component: SessionTimerComponent;
-  let fixture: ComponentFixture<SessionTimerComponent>;
+describe('CreateAccountComponent', () => {
+  let component: CreateAccountComponent;
+  let fixture: ComponentFixture<CreateAccountComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SessionTimerComponent ]
+      declarations: [ CreateAccountComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SessionTimerComponent);
+    fixture = TestBed.createComponent(CreateAccountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

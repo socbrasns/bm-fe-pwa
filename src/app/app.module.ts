@@ -1,31 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {CheckboxModule} from 'primeng/checkbox';
-import { SessionTimerComponent } from './session-timer/session-timer.component';
-import { LoginComponent } from './component/login/login.component';
-import { FooterComponent } from './component/footer/footer.component';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from 'src/app/service/auth/auth.service';
+import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { LoginComponent } from './account/login/login.component';
+import { CreateAccountComponent } from './account/create-account/create-account.component';
+import { BmSessionCreateComponent } from './bm-session/bm-session-create/bm-session-create.component';
+import { HomeComponent } from './layout/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SessionTimerComponent,
+    CreateAccountComponent,    
+    AuthenticationComponent,
     LoginComponent,
-    FooterComponent
+    BmSessionCreateComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CheckboxModule,
+    ButtonModule,
     FormsModule,
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

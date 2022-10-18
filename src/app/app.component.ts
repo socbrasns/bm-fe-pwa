@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
-import { AuthService } from 'src/app/service/auth/auth.service';
 import { User } from './model/user';
 
 @Component({
@@ -10,18 +10,10 @@ import { User } from './model/user';
 })
 export class AppComponent implements OnInit {
   title = 'bm-fe-pwa';
-  authenticatedUser!: User;
   
-  constructor(private primengConfig: PrimeNGConfig,
-    private authService: AuthService) {}
+  constructor(private primengConfig: PrimeNGConfig) { }
 
     ngOnInit() {
         this.primengConfig.ripple = true;
-        this.authService.authUserEmitter.subscribe(this.authEventHolder)
-    }
-
-    authEventHolder(user: User){
-      this.authenticatedUser = user
-      console.log(this.authenticatedUser)
     }
 }
