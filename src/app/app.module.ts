@@ -14,6 +14,8 @@ import { BmSessionCreateComponent } from './bm-session/bm-session-create/bm-sess
 import { HomeComponent } from './layout/home/home.component';
 import { MenuBarHomeComponent } from './layout/home/menu-bar-home/menu-bar-home.component';
 import { MenubarModule } from 'primeng/menubar';
+import { StyleClassModule } from 'primeng/styleclass';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,11 @@ import { MenubarModule } from 'primeng/menubar';
     BrowserAnimationsModule,
     AppRoutingModule,
     CheckboxModule,
+    CommonModule,
     ButtonModule,
     FormsModule,
     MenubarModule,
+    StyleClassModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

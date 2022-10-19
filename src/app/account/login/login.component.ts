@@ -18,23 +18,23 @@ import { AccountService } from 'src/app/service/account/account.service';
         <div>
           <form (ngSubmit)="onSubmit()" #form="ngForm">
             <div class="form-group">
-                <label for="email1" class="block text-900 font-medium mb-2">Email</label>
-                <input id="email1" type="text" pInputText class="w-full mb-3" [(ngModel)]="login.email" required>
+                <label for="email" class="block text-900 font-medium mb-2">Email</label>
+                <input id="email" name="email" type="text" pInputText class="w-full mb-3" [(ngModel)]="login.email" required>
             </div>
             <div class="form-group">
-              <label for="password1" class="block text-900 font-medium mb-2">Password</label>
-              <input id="password1" type="password" pInputText class="w-full mb-3" [(ngModel)]="login.password" required>
+              <label for="password" class="block text-900 font-medium mb-2">Password</label>
+              <input id="password" name="password" type="password" pInputText class="w-full mb-3" [(ngModel)]="login.password" required>
             </div>
             <div class="flex align-items-center justify-content-between mb-6">
               <div class="form-group">
                 <div class="flex align-items-center">
-                    <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
-                    <label for="rememberme1">Remember me</label>
+                  <p-checkbox [(ngModel)]="rememberme" id="rememberme" name="rememberme" [binary]="true" styleClass="ml-2"></p-checkbox>
+                  <label for="rememberme">Remember me</label>
                 </div>
                 <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
               </div>
             </div>
-              <button type="submit" [disabled]="form.form.invalid" label="Sign In" icon="pi pi-user" pButton pRipple class="w-full"></button>
+              <p-button pButton pRipple [disabled]="form.form.invalid" icon="pi pi-user" label="Sing In" type="submit" class="w-full" ></p-button>
           </form>
         </div>
     </div>
@@ -43,7 +43,8 @@ import { AccountService } from 'src/app/service/account/account.service';
 })
 export class LoginComponent implements OnInit {
 
-  login: User = new User()
+  login: User = new User();
+rememberme: any;
 
   constructor(
     private accountService: AccountService,
@@ -51,9 +52,6 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.login.email = 't'
-    this.login.password = 't'
-this.onSubmit()
 
   }
 

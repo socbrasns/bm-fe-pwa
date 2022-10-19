@@ -23,7 +23,7 @@ export class MenuBarHomeComponent implements OnInit {
 
   singOut(): void{
     window.localStorage.removeItem('token')
-    this.router.navigate([''])
+    this.router.navigate(['login'])
   }
 
   ngOnInit(): void {
