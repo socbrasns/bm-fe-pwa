@@ -12,6 +12,8 @@ import { LoginComponent } from './account/login/login.component';
 import { CreateAccountComponent } from './account/create-account/create-account.component';
 import { BmSessionCreateComponent } from './bm-session/bm-session-create/bm-session-create.component';
 import { HomeComponent } from './layout/home/home.component';
+import { MenuBarHomeComponent } from './layout/home/menu-bar-home/menu-bar-home.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { HomeComponent } from './layout/home/home.component';
     LoginComponent,
     BmSessionCreateComponent,
     HomeComponent,
+    MenuBarHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { HomeComponent } from './layout/home/home.component';
     CheckboxModule,
     ButtonModule,
     FormsModule,
+    MenubarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
