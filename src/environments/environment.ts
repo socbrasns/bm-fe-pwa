@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  auth: {
+    api: '', //bm-api-data host and port
+    tokenStorageId: 'token', // token id in local storage
+    authorityStorageId: 'authority', // authority id in local storage
+    profilenStorageId: 'profile', // profile id in local storage
+  },
+  
 };
 
 /*

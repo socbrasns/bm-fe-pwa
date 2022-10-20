@@ -16,6 +16,7 @@ import { MenuBarHomeComponent } from './layout/home/menu-bar-home/menu-bar-home.
 import { MenubarModule } from 'primeng/menubar';
 import { StyleClassModule } from 'primeng/styleclass';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     MenubarModule,
     StyleClassModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
