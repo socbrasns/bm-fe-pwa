@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { PrimeNGConfig } from 'primeng/api';
-import { User } from './model/user';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +7,12 @@ import { User } from './model/user';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'bm-fe-pwa';
+  title = environment.appTitle
+  lang = environment.appLang
   
-  constructor(private primengConfig: PrimeNGConfig) { }
+  constructor() { }
 
     ngOnInit() {
-        this.primengConfig.ripple = true;
+        
     }
 }

@@ -1,7 +1,10 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable, NgModule } from '@angular/core';
-import { User } from 'src/app/model/user';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { ajax, AjaxResponse } from 'rxjs/ajax';
+import { of } from 'rxjs';  
+import { map , catchError } from 'rxjs/operators';  
+import { AuthUser, LoginForm, Token } from '../../model/accountModel';
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +15,37 @@ export class AccountService {
   private authorityStorageId: string = environment.auth.authorityStorageId
   private profilenStorageId: string = environment.auth.profilenStorageId
 
-  constructor(private httpClient: HttpClient) { }
-  
-  // interface
-  login = (user: User): Promise<boolean> => new Promise<boolean>((resolve) => this.loginCallback)
+  constructor() { }
+
+
+
+  login = (login: LoginForm): Observable<AjaxResponse<Token>> => {
+    const user: AuthUser = login
+    return ajax({
+      method: 'POST',
+      url: environment.auth.api + '/auth',
+      body: user,      
+    }).pipe(
+      map(resp =>  console.log),
+      catchError(error => {
+        console.log('error: ', error);
+        return of(error);
+      })
+    );
+  }
+
   createAccount = (account: any): Promise<boolean> => new Promise<boolean>((resolve) => this.creatAccountCallback)
 
+
+
   // callbacks
-  private loginCallback = (response: any): Promise<boolean> => Promise.resolve(
-    this.storeToken(response.token) &&
-    this.storeAuthority(response.authority) &&
-    this.storeProfile(response.profile)
-  )
+  private loginCallback = (token: Token): void => {
+    this.storeToken(token.token) //&&
+    //this.storeAuthority(response.authority) &&
+    //this.storeProfile(response.profile)
+  }
+    
+  
 
   private creatAccountCallback = (response: any): boolean => true
 

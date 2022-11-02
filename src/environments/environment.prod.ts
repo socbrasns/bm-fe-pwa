@@ -6,4 +6,5 @@ export const environment = {
     authorityStorageId: '', // authority id in local storage
     profilenStorageId: '', // profile id in local storage
   },
+  themeDefault: 'bootstrap4-dark-blue',
 };

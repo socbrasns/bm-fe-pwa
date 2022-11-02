@@ -3,14 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  appTitle: 'bm-fe-pwa',
+  appLang: 'en',
   production: false,
   auth: {
-    api: '', //bm-api-data host and port
+    api: 'http://localhost:8090', //bm-api-data host and port
     tokenStorageId: 'token', // token id in local storage
     authorityStorageId: 'authority', // authority id in local storage
     profilenStorageId: 'profile', // profile id in local storage
   },
-  
+  themeDefault: 'bootstrap4-dark-blue',
+  themes: ['bootstrap4-dark-blue','bootstrap4-dark-purple','md-light-indigo']
 };
 
 /*

@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
         </main>
       </section>
     </div>
+
     <div class="footer">
       <footer>
         <a href="https://cfgsolucoes.com">cfgsolucoes.com</a>
